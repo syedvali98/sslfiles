@@ -523,6 +523,19 @@ section
     background: linear-gradient(to bottom, #200e35, #4d1d85);
     z-index: 1;
 }
+.home_background1
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 110%;
+	background-color: #4d1d85;
+    background-image: linear-gradient(to bottom, #200e35, #4d1d85);
+    background: #4d1d85;
+    background: linear-gradient(to bottom, #200e35, #4d1d85);
+    z-index: 1;
+}
 .form_background
 {
 	position: absolute;
@@ -858,9 +871,21 @@ section
 	background: #715691;
 	margin-top: 86px;
 }
+.intro_button1
+{
+	width: 257px;
+	height: 63px;
+	border-radius: 12px;
+	background: #1befc5;
+	margin-top: 36px;
+}
 .intro_button:hover
 {
 	background: #1befc5;
+}
+.intro_button1:hover
+{
+	background: #715691;
 }
 .intro_button a
 {
@@ -871,6 +896,14 @@ section
 	line-height: 63px;
 }
 
+.intro_button1 a
+{
+	display: block;
+	font-size: 16px;
+	font-weight: 700;
+	color: #FFFFFF;
+	line-height: 63px;
+}
 /*********************************
 7. Services
 *********************************/

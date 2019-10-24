@@ -332,10 +332,21 @@
 		font-size: 14px;
 		line-height: 53px;
 	}
+	.intro_button1 a
+	{
+		font-size: 12px;
+		line-height: 53px;
+	}
 	.intro_button
 	{
 		width: 227px;
 		height: 53px;
+	}
+	.intro_button1
+	{
+		width: 127px;
+		height: 53px;
+		align-items: center;
 	}
 	.pricing_item
 	{
