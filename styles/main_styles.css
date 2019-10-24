@@ -523,6 +523,17 @@ section
     background: linear-gradient(to bottom, #200e35, #4d1d85);
     z-index: 1;
 }
+.form_background
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #4d1d85;
+    background: #4d1d85;
+    z-index: 1;
+}
 .background_city
 {
 	z-index: 3;
@@ -1267,6 +1278,11 @@ section
 .contact_textarea
 {
 	height: 142px;
+	padding-top: 15px;
+}
+.contact_textarea_2
+{
+	height: 82px;
 	padding-top: 15px;
 }
 .contact_input::-webkit-input-placeholder

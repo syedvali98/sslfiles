@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Login</title>
+    <title>User Info</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="HostSpace template project">
@@ -35,7 +35,6 @@
             </div>
         </header>
 
-        
         <!-- Home -->
 
         <div class="home">
@@ -44,30 +43,39 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <div class="home_content text-center">
-                                <div class="home_title">Login</div>
+                            <div class="home_content">
+                                <div class="home_title">Hi, there...</div>
                                 <div class="contact_container">
                                     <form id="login_form" class="contact_form">
+
                                         <div class="row">
-                                            <div class="col-md-3"></div>
                                             <div class="col-md-6">
-                                                <input id="emailInput" type="email" class="contact_input"
-                                                    placeholder="Email" required="required">
+                                                <label for="exampleInputEmail1">Full Name</label>
+
+                                                <input id="nameInput" type="text" class="contact_input"
+                                                    placeholder="Enter Your Name" required="required">
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-3"></div>
                                             <div class="col-md-6">
-                                                <input id="passwordInput" type="password" class="contact_input"
-                                                    placeholder="password" required="required">
+                                                <label for="exampleInputEmail1">Mobile Number</label>
+
+                                                <input id="phoneInput" type="tel" class="contact_input"
+                                                    placeholder="Enter Your Mobile Number" required="required">
                                             </div>
                                         </div>
                                     </form>
-                                    <button onclick="loginFunction()" class="contact_button">Login</button>
+                                    <button onclick="submitFunction()" class="contact_button">Submit</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="home">
+            <div class="form_background"></div>
+            <div class="home_container">
+                <div class="container">
+
                 </div>
             </div>
         </div>
@@ -166,6 +174,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+
     <script>
 
         $(document).ready(function () {
@@ -182,21 +192,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 measurementId: "G-R8EHNDHJR4"
             };
             firebase.initializeApp(config);
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    // User is signed in.
-                    window.location.href = ("user-dashboard.html");
-                    // ...
-                }
-            });
         });
 
-        function loginFunction() {
-            var b = $("#emailInput").val(),
-                c = $("#passwordInput").val()
-            firebase.auth().signInWithEmailAndPassword(b, c).then(function (success) {
-                window.location.href = ("user-dashboard.html");
-            });
+        function submitFunction() {
+            var q = firebase.database().ref("user-info");
+            var b = $("#nameInput").val(),
+                c = $("#phoneInput").val();
+            e = { name: b, phone: c };
+            q.push(e).then(function (a) {
+                window.location.href = ("user-options.html");
+            })
+
         }
     </script>
 </body>
