@@ -46,8 +46,7 @@
                             <div class="home_content">
                                 <div class="home_title">Hi, there...</div>
                                 <div class="contact_container">
-                                    <form id="login_form" class="contact_form">
-
+                                    <form id="loginform" class="contact_form">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label for="exampleInputEmail1">Full Name</label>
@@ -61,9 +60,15 @@
                                                 <input id="phoneInput" type="tel" class="contact_input"
                                                     placeholder="Enter Your Mobile Number" required="required">
                                             </div>
+                                            <div class="col-12">
+                                                <label for="exampleInputEmail1">Message</label>
+
+                                                <input id="messageInput" type="tel" class="contact_input"
+                                                    placeholder="I need a portfolio website" required="required">
+                                            </div>
                                         </div>
+                                        <input type="submit" class="contact_button" value="Submit">
                                     </form>
-                                    <button onclick="submitFunction()" class="contact_button">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +76,7 @@
                 </div>
             </div>
         </div>
-        <div class="home">
+        <div class="home1">
             <div class="form_background"></div>
             <div class="home_container">
                 <div class="container">
@@ -192,18 +197,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 measurementId: "G-R8EHNDHJR4"
             };
             firebase.initializeApp(config);
+            
         });
 
-        function submitFunction() {
+        $("#loginform").submit(function (a) {
+            a.preventDefault();
             var q = firebase.database().ref("user-info");
             var b = $("#nameInput").val(),
-                c = $("#phoneInput").val();
-            e = { name: b, phone: c };
+                c = $("#phoneInput").val(),
+                d = $("#messageInput").val();
+            e = { name: b, phone: c, message: d };
             q.push(e).then(function (a) {
                 window.location.href = ("user-options.html");
             })
+        })
 
-        }
     </script>
 </body>
 

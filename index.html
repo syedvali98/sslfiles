@@ -89,11 +89,11 @@
 								<div class="row">
 									<div class="col-md-2"></div>
 									<div class="col-md-4">
-										<div class="intro_button ml-auto mr-auto"><a href="services.html">Yes</a>
+										<div class="intro_button2 ml-auto mr-auto"><a href="services.html">Yes</a>
 										</div>
 									</div>
 									<div class="col-md-4">
-										<div class="intro_button ml-auto mr-auto"><a href="services.html">Of Course, Yes</a>
+										<div class="intro_button2 ml-auto mr-auto"><a href="services.html">Of Course, Yes</a>
 										</div>
 									</div>
 								</div>
@@ -231,7 +231,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		var q = firebase.database().ref("landing-page-pending-users");
 
 		$("#contact_form").submit(function (a) {
-			$(this), console.log("Submit to Firebase");
+			console.log("Submit to Firebase");
 			var b = $("#name").val(),
 				c = $("#phone").val(),
 				d = $("#message").val(),
