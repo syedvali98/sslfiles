@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Admin Panel</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center mx-auto">
+            <div style="padding: 20px;" class="col-12">
+                <h3>User Management</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">Active Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                            aria-controls="profile" aria-selected="false">Pending Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                            aria-controls="contact" aria-selected="false">Create User</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div id="active-users-list" class="list-group">
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div id="pending-users-list" class="list-group">
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form id="create-user" style="padding: 20px;">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Name</label>
+                                        <input type="text" class="form-control" id="inputName"
+                                            aria-describedby="emailHelp" placeholder="Enter User's Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" id="inputEmail"
+                                            aria-describedby="emailHelp" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Mobile Number</label>
+                                        <input type="tel" class="form-control" id="inputMobile"
+                                            aria-describedby="emailHelp" placeholder="Enter Mobile Number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Domain Name</label>
+                                        <input type="text" class="form-control" id="inputDomain"
+                                            aria-describedby="emailHelp" placeholder="Enter Domain Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Theme</label>
+                                        <input type="text" class="form-control" id="inputTheme"
+                                            aria-describedby="emailHelp" placeholder="Enter Theme Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Period</label>
+                                        <select class="form-control" id="inputPeriod">
+                                            <option>6 Months</option>
+                                            <option>12 Months</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" id="inputPassword"
+                                            placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDao7sP4u5ZMmPRUCh12cdQbY9O0Xh4mAA",
+                authDomain: "mabsites-d8b57.firebaseapp.com",
+                databaseURL: "https://mabsites-d8b57.firebaseio.com",
+                projectId: "mabsites-d8b57",
+                storageBucket: "mabsites-d8b57.appspot.com",
+                messagingSenderId: "273518763570",
+                appId: "1:273518763570:web:450e0639f4c3f05180262b",
+                measurementId: "G-R8EHNDHJR4"
+            };
+            firebase.initializeApp(config);
+            var data_obj = [];
+            firebase.database().ref('user-info').on('value', function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var childData = childSnapshot.val();
+                    $("#pending-users-list").append(`<a class="list-group-item list-group-item-action"> <div class="d-flex w-100 justify-content-between"> <h5 class="mb-1">` + childData.name + `</h5> <small>` + childData.theme + `</small> </div><p class="mb-1">` + childData.domain_name + `</p><small>` + childData.phone + `</small> </a>`);
+                });
+            });
+            firebase.database().ref('active-users').on('value', function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var childData = childSnapshot.val();
+                    $("#active-users-list").append(`<a class="list-group-item list-group-item-action"> <div class="d-flex w-100 justify-content-between"> <h5 class="mb-1">` + childData.name + `</h5> <small>` + childData.theme + `</small> </div><p class="mb-1">` + childData.domain_name + `</p><small>` + childData.phone + `</small> </a>`);
+                });
+            });
+
+        });
+
+        $("#create-user").submit(function (x) {
+            x.preventDefault();
+            console.log("Submit to Firebase");
+            var q = firebase.database().ref("active-users");
+            var a = $("#inputEmail").val(),
+                b = $("#inputMobile").val(),
+                c = $("#inputPeriod").val(),
+                d = $("#inputPassword").val(),
+                e = $("#inputDomain").val(),
+                h = $("#inputName").val(),
+                i = $("#inputTheme").val(),
+                f = moment().format("MMM Do YY");
+            firebase.auth().createUserWithEmailAndPassword(a, d).then(function (success) {
+                var user = success.user;
+                var g = { name: h, email: a, phone: b, period: c, domain_name:e, theme:i, joinedOn: f, status: 'active' };
+                firebase.database().ref("active-users/" + user.uid).set(g).then(function (a) {
+                    var q = firebase.database().ref();
+                    q.child("user-info").orderByChild('phone').equalTo(b).on("value", function (snapshot) {
+                        snapshot.forEach(function (data) {
+                            data_key = data.key;
+                            firebase.database().ref('user-info/' + data_key).remove();
+                        });
+                    });
+                })
+            });
+
+        })
+
+    </script>
+</body>
+
+</html>

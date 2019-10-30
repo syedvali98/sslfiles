@@ -502,6 +502,51 @@ section
 }
 
 /*********************************
+5. Service
+*********************************/
+
+.services_row
+{
+	margin-top: 95px;
+}
+.service_col
+{
+	margin-bottom: 91px;
+}
+.service
+{
+	width: 100%;
+	background: #f4f7f8;
+	border-radius: 12px;
+	padding-top: 58px;
+	padding-bottom: 66px;
+	padding-left: 30px;
+	padding-right: 30px;
+	border: solid 2px transparent;
+}
+.service:hover
+{
+	border-color: #1befc5;
+	background: #FFFFFF;
+}
+.service_icon
+{
+	width: 215px;
+	height: 275px;
+}
+.service_icon img
+{
+	max-width: 100%;
+}
+.service_icon svg
+{
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+/*********************************
 5. Home
 *********************************/
 
@@ -534,7 +579,7 @@ section
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 110%;
+	height: 100%;
 	background-color: #4d1d85;
     background-image: linear-gradient(to bottom, #200e35, #4d1d85);
     background: #4d1d85;
@@ -628,7 +673,6 @@ section
 }
 .home_content
 {
-
 }
 .home_title
 {
@@ -722,10 +766,10 @@ section
 .domain_search_selected
 {
 	width: 100%;
-	font-size: 24px;
+	font-size: 22px;
 	font-weight: 500;
 	color: #FFFFFF;
-	margin-left: 28px;
+	margin-left: 2px;
 }
 .domain_search_dropdown ul
 {
@@ -769,6 +813,8 @@ section
 	width: 166px;
 	height: 60px;
 	background: #1befc5;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
 	border-radius: 12px;
 	border: none;
 	outline: none;
@@ -937,7 +983,7 @@ section
 {
 	width: 100%;
 	padding-top: 96px;
-	padding-bottom: 127px;
+	padding-bottom: 27px;
 }
 .services .section_title h2
 {

@@ -231,6 +231,10 @@
 	{
 		font-size: 48px;
 	}
+	.home_background1
+	{
+		height: 110%;
+	}
 	.domain_search_form > div
 	{
 		width: 100%;
@@ -268,9 +272,21 @@
 	{
 		height: 75vh;
 	}
+	.home1
+	{
+		height: 75vh;
+	}
+	.home2
+	{
+		height: 120vh;
+	}
 	.home_title
 	{
 		font-size: 36px;
+	}
+	.home_background1
+	{
+		height: 110%;
 	}
 	.domain_search_input,
 	.domain_search_dropdown,

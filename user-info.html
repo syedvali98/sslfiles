@@ -44,7 +44,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="home_content">
-                                <div class="home_title">Hi, there...</div>
+                                <div class="home_title">Your Details...</div>
                                 <div class="contact_container">
                                     <form id="loginform" class="contact_form">
                                         <div class="row">
@@ -197,7 +197,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 measurementId: "G-R8EHNDHJR4"
             };
             firebase.initializeApp(config);
-            
+
         });
 
         $("#loginform").submit(function (a) {
@@ -206,7 +206,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             var b = $("#nameInput").val(),
                 c = $("#phoneInput").val(),
                 d = $("#messageInput").val();
-            e = { name: b, phone: c, message: d };
+            localStorage.setItem("name", b);
+            localStorage.setItem("mobile", c);
+            e = { name: b, phone: c, message: d, domain_name:'' };
             q.push(e).then(function (a) {
                 window.location.href = ("user-options.html");
             })
