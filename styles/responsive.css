@@ -162,7 +162,7 @@
 	}
 	.pricing_item
 	{
-		width: 50%;
+		width: 100%;
 	}
 	.pricing_item:not(:last-child)
 	{
@@ -233,7 +233,7 @@
 	}
 	.home_background1
 	{
-		height: 110%;
+		height: 100vh;
 	}
 	.domain_search_form > div
 	{
@@ -286,7 +286,7 @@
 	}
 	.home_background1
 	{
-		height: 110%;
+		height: 100vh;
 	}
 	.domain_search_input,
 	.domain_search_dropdown,

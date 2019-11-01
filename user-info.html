@@ -76,84 +76,14 @@
                 </div>
             </div>
         </div>
-        <div class="home1">
-            <div class="form_background"></div>
-            <div class="home_container">
-                <div class="container">
 
-                </div>
-            </div>
-        </div>
-
-        <!-- Intro -->
-
-
-        <div class="cta">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div
-                            class="cta_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-between justify-content-center magic_fade_in">
-                            <div class="cta_title">Start building your website now!</div>
-                            <div class="cta_price"><span>from</span>₹599<span>/month</span></div>
-                            <div class="cta_button"><a href="#">Start Now</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Footer -->
 
         <footer class="footer magic_fade_in">
-            <div class="container">
+            <div class="home_background1">
                 <div class="row">
 
-                    <div class="col-lg-6 footer_col magic_fade_in">
-                        <div class="footer_about">
-                            <div class="footer_logo">Mab<span>Sites</span></div>
-                            <!--
-						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. 
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --
-</div>-->
-                            <div class="footer_text">
-                                <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam
-                                    pretium turpis eget nibh laoreet iaculis. Nullam lacinia ex eleifend orci porttitor,
-                                    suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis.
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 footer_col">
-                        <div class="footer_links">
-                            <div class="row">
-                                <div class="col-sm-6 footer_list_col magic_fade_in">
-                                    <div class="footer_list_container">
-                                        <div class="footer_list_title">Hosting</div>
-                                        <ul class="footer_list">
-                                            <li><a href="#">VPS Hosting</a></li>
-                                            <li><a href="#">Cloud Server</a></li>
-                                            <li><a href="#">Reseller Package</a></li>
-                                            <li><a href="#">Dedicated Hosting</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 footer_list_col magic_fade_in">
-                                    <div class="footer_list_container">
-                                        <div class="footer_list_title">Support</div>
-                                        <ul class="footer_list">
-                                            <li><a href="#">Buy a Domain</a></li>
-                                            <li><a href="#">Premium Domain Names</a></li>
-                                            <li><a href="#">Web Hosting</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -197,6 +127,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 measurementId: "G-R8EHNDHJR4"
             };
             firebase.initializeApp(config);
+            
 
         });
 
@@ -208,7 +139,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 d = $("#messageInput").val();
             localStorage.setItem("name", b);
             localStorage.setItem("mobile", c);
-            e = { name: b, phone: c, message: d, domain_name:'' };
+            e = { name: b, phone: c, message: d, domain_name: '' };
             q.push(e).then(function (a) {
                 window.location.href = ("user-options.html");
             })

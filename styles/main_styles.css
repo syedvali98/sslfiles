@@ -29,7 +29,10 @@
 /*********************************
 2. Body and some general stuff
 *********************************/
-
+html {
+	scroll-behavior: smooth;
+  }
+  
 *
 {
 	margin: 0;
@@ -573,6 +576,15 @@ section
     background: linear-gradient(to bottom, #200e35, #4d1d85);
     z-index: 1;
 }
+.modal_background
+{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+    background: #4d1d85;
+}
 .home_background1
 {
 	position: absolute;
@@ -596,6 +608,10 @@ section
 	background-color: #4d1d85;
     background: #4d1d85;
     z-index: 1;
+}
+.pointer
+{ 
+	cursor: pointer !important; 
 }
 .background_city
 {
@@ -1099,7 +1115,7 @@ section
 }
 .pricing_item
 {
-	width: 50%;
+	width: 100%;
 }
 .pricing_item:not(:last-child)
 {
@@ -1127,6 +1143,7 @@ section
 {
 	padding-top: 50px;
 	padding-bottom: 37px;
+	background: #FFFFFF;
 }
 .package_price
 {
@@ -1188,6 +1205,7 @@ section
 	color: #35214d;
 	line-height: 53px;
 }
+
 .pricing_button:hover
 {
 	background: #7836c6;

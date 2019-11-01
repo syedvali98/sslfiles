@@ -101,7 +101,7 @@
                                         </div>
                                         <div class="carousel-item text-center">
                                             <div class="home_title">Niche of your website?</div>
-                                            <div class="home_text">Hosting.</div>
+                                            <div class="home_text">select a category.</div>
                                             <div class="row">
                                                 <div class="col-md-4 col-6">
                                                     <div class="intro_button1 ml-auto mr-auto">
@@ -174,95 +174,14 @@
                 </div>
             </div>
         </div>
-    </div>
+        <footer class="footer magic_fade_in">
+            <div class="home_background1">
+                <div class="row">
 
-    <!-- CTA -->
 
-    <div class="cta">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div
-                        class="cta_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-between justify-content-center magic_fade_in">
-                        <div class="cta_title">Need a Website?</div>
-                        <div class="cta_price"><span>from</span>₹599<span>/month</span></div>
-                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-
-    <footer class="footer magic_fade_in">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-6 footer_col magic_fade_in">
-                    <div class="footer_about">
-                        <div class="footer_logo">Mab<span>Sites</span></div>
-                        <!--
-						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. 
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --
-</div>-->
-                        <div class="footer_text">
-                            <p></p>
-                        </div>
-                        <div class="contact_container">
-                            <form id="contact_form" class="contact_form">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input id="name" type="text" class="contact_input" placeholder="Your Name"
-                                            required="required">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input id="phone" type="tel" class="contact_input"
-                                            placeholder="Your Phone Number" required="required">
-                                    </div>
-                                </div>
-                                <div>
-                                    <textarea id="message" class="contact_input contact_textarea" placeholder="Message"
-                                        required="required"></textarea>
-                                </div>
-                                <input type="submit" class="contact_button" value="Submit">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 footer_col">
-                    <div class="footer_links">
-                        <div class="row">
-                            <div class="col-sm-2"></div>
-                            <div class="col-sm-5 footer_list_col magic_fade_in">
-                                <div class="footer_list_container">
-                                    <div class="footer_list_title">Hosting</div>
-                                    <ul class="footer_list">
-                                        <li><a href="#">VPS Hosting</a></li>
-                                        <li><a href="#">Cloud Server</a></li>
-                                        <li><a href="#">Reseller Package</a></li>
-                                        <li><a href="#">Dedicated Hosting</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-5 footer_list_col magic_fade_in">
-                                <div class="footer_list_container">
-                                    <div class="footer_list_title">Support</div>
-                                    <ul class="footer_list">
-                                        <li><a href="#">Buy a Domain</a></li>
-                                        <li><a href="#">Premium Domain Names</a></li>
-                                        <li><a href="#">Web Hosting</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </footer>
+        </footer>
     </div>
 
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -312,7 +231,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     var b = $("#domainInput").val();
                     firebase.database().ref('user-info/' + data_key).update({
                         domain_name: b
-                    }).then(function (){
+                    }).then(function () {
                         window.location.href = ("select_theme.html");
                     });
                 });
