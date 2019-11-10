@@ -14,8 +14,7 @@
 
 ******************************/
 
-$(document).ready(function()
-{
+$(document).ready(function () {
 	"use strict";
 
 	/* 
@@ -29,18 +28,15 @@ $(document).ready(function()
 
 	setHeader();
 
-	$(window).on('resize', function()
-	{
+	$(window).on('resize', function () {
 		setHeader();
 
-		setTimeout(function()
-		{
+		setTimeout(function () {
 			$(window).trigger('resize.px.parallax');
 		}, 375);
 	});
 
-	$(document).on('scroll', function()
-	{
+	$(document).on('scroll', function () {
 		setHeader();
 	});
 
@@ -55,14 +51,11 @@ $(document).ready(function()
 
 	*/
 
-	function setHeader()
-	{
-		if($(window).scrollTop() > 91)
-		{
+	function setHeader() {
+		if ($(window).scrollTop() > 91) {
 			header.addClass('scrolled');
 		}
-		else
-		{
+		else {
 			header.removeClass('scrolled');
 		}
 	}
@@ -73,27 +66,28 @@ $(document).ready(function()
 
 	*/
 
-	function initMenu()
-	{
+	function initMenu() {
 		var hamb = $('.hamburger');
 		var menu = $('.menu');
 		var menuOverlay = $('.menu_overlay');
 		var menuClose = $('.menu_close_container');
+		var menuClose1 = $('.menu_close_container1');
 
-		hamb.on('click', function()
-		{
+		hamb.on('click', function () {
 			menu.toggleClass('active');
 			menuOverlay.toggleClass('active');
 		});
 
-		menuOverlay.on('click', function()
-		{
+		menuOverlay.on('click', function () {
 			menuOverlay.toggleClass('active');
 			menu.toggleClass('active');
 		});
 
-		menuClose.on('click', function()
-		{
+		menuClose.on('click', function () {
+			menuOverlay.toggleClass('active');
+			menu.toggleClass('active');
+		});
+		menuClose1.on('click', function () {
 			menuOverlay.toggleClass('active');
 			menu.toggleClass('active');
 		});
@@ -105,19 +99,15 @@ $(document).ready(function()
 
 	*/
 
-	function initDropdown()
-	{
-		if($('.domain_search_dropdown').length)
-		{
+	function initDropdown() {
+		if ($('.domain_search_dropdown').length) {
 			var dd = $('.domain_search_dropdown');
 			var ddItems = $('.domain_search_dropdown ul li');
 			var ddSelected = $('.domain_search_selected');
-			dd.on('click', function()
-			{
+			dd.on('click', function () {
 				dd.toggleClass('active');
 			});
-			ddItems.on('click', function()
-			{
+			ddItems.on('click', function () {
 				var selectedDomain = $(this).text();
 				ddSelected.text(selectedDomain);
 			});
@@ -130,27 +120,24 @@ $(document).ready(function()
 
 	*/
 
-	function initSvg()
-	{
-		jQuery('img.svg').each(function()
-		{
+	function initSvg() {
+		jQuery('img.svg').each(function () {
 			var $img = jQuery(this);
 			var imgID = $img.attr('id');
 			var imgClass = $img.attr('class');
 			var imgURL = $img.attr('src');
 
-			jQuery.get(imgURL, function(data)
-			{
+			jQuery.get(imgURL, function (data) {
 				// Get the SVG tag, ignore the rest
 				var $svg = jQuery(data).find('svg');
 
 				// Add replaced image's ID to the new SVG
-				if(typeof imgID !== 'undefined') {
-				$svg = $svg.attr('id', imgID);
+				if (typeof imgID !== 'undefined') {
+					$svg = $svg.attr('id', imgID);
 				}
 				// Add replaced image's classes to the new SVG
-				if(typeof imgClass !== 'undefined') {
-				$svg = $svg.attr('class', imgClass+' replaced-svg');
+				if (typeof imgClass !== 'undefined') {
+					$svg = $svg.attr('class', imgClass + ' replaced-svg');
 				}
 
 				// Remove any invalid XML tags as per http://validator.w3.org
@@ -168,24 +155,21 @@ $(document).ready(function()
 
 	*/
 
-	function initMagic()
-	{
-		if($('.magic_fade_in').length)
-		{
+	function initMagic() {
+		if ($('.magic_fade_in').length) {
 			var magic = $('.magic_fade_in');
-	    	magic.each(function()
-	    	{
-	    		var ele = this;
-	    		var smScene = new ScrollMagic.Scene(
-		    	{
-		    		triggerElement:ele,
-		    		triggerHook:'onEnter',
-		    		offset: 130,
-		    		reverse:false
-		    	})
-		    	.setTween(TweenMax.from(ele, 0.5, {autoAlpha:0, ease: Power1.easeIn}))
-		    	.addTo(ctrl);	
-	    	});
+			magic.each(function () {
+				var ele = this;
+				var smScene = new ScrollMagic.Scene(
+					{
+						triggerElement: ele,
+						triggerHook: 'onEnter',
+						offset: 130,
+						reverse: false
+					})
+					.setTween(TweenMax.from(ele, 0.5, { autoAlpha: 0, ease: Power1.easeIn }))
+					.addTo(ctrl);
+			});
 		}
 	}
 
