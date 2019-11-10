@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>HostSpace</title>
+	<title>MabSites</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="HostSpace template project">
@@ -30,16 +30,16 @@
 							<div class="logo"><a href="#">Mab<span>Sites</span></a></div>
 							<nav class="main_nav ml-auto mr-auto">
 								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<!--	<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="about.html">About us</a></li>
-								<li><a href="services.html">Services</a></li>
-								<li><a href="blog.html">News</a></li>
-								<li><a href="contact.html">Contact</a></li>-->
+									<li><a href="#about">About us</a></li>
+									<li><a href="#pricing">Pricing</a></li>
+									<li><a href="#footer">Contact</a></li>
 								</ul>
 							</nav>
 							<div class="log_reg">
 								<div class="log_reg_content d-flex flex-row align-items-center justify-content-start">
-									<div class="login log_reg_text"><a href="sign-in.html">Login</a></div>
+									<div class="login log_reg_text">
+										<div class="myaccount"></div>
+									</div>
 								</div>
 							</div>
 							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
@@ -61,7 +61,7 @@
 			</div>
 			<div class="log_reg">
 				<div class="log_reg_content d-flex flex-row align-items-center justify-content-end">
-					<div class="login log_reg_text"><a href="sign-in.html">Login</a></div>
+					<div class="login log_reg_text"></div>
 				</div>
 			</div>
 			<nav class="menu_nav">
@@ -76,22 +76,18 @@
 		</div>
 		<!-- Home -->
 
-		<div class="home">
+		<div id="home" class="home">
 			<div class="home_background"></div>
-			<div class="cloud cloud_1"><img src="images/cloud.png" alt=""></div>
-			<div class="cloud cloud_2"><img src="images/cloud.png" alt=""></div>
-			<div class="cloud cloud_3"><img src="images/cloud_full.png" alt=""></div>
-			<div class="cloud cloud_4"><img src="images/cloud.png" alt=""></div>
 			<div class="home_container">
 				<div class="container">
 					<div class="row">
 						<div class="col">
 							<div class="home_content text-center">
-								<h2 class="text-white">EMPOWERING BUSINESSES THROUGH</h2>
-								<h1 class="text-white">CREATIVE, STRATEGIC
-									& ROI DRIVEN SOLUTIONS</h1>
+								<h3 class="text-white">EMPOWERING BUSINESSES THROUGH</h3>
+								<h2 class="text-white">CREATIVE, STRATEGIC
+									& ROI DRIVEN SOLUTIONS</h2>
 								<div class="intro_button text-center trans_200 ml-auto mr-auto">
-									<a class="text-white" style="font-size: 14px;" data-toggle="modal"
+									<a class="text-white" style="font-size: 14px;margin-top: -50px;" data-toggle="modal"
 										data-target="#exampleModal">LET'S
 										DISCUSS YOUR PROJECT</a></div>
 							</div>
@@ -101,17 +97,10 @@
 				</div>
 			</div>
 		</div>
-		<footer class="footer magic_fade_in">
-				<div class="home_background1">
-					<div class="row">
-	
-	
-					</div>
-				</div>
-			</footer>
+
 		<!-- Services -->
 
-		<div class="services">
+		<div id="about" class="services">
 			<div class="container">
 				<div class="row">
 					<div class="col magic_fade_in">
@@ -129,7 +118,7 @@
 							<div class="service_icon"><img class="svg" src="images/icon_4.svg"
 									alt="https://www.flaticon.com/authors/freepik"></div>
 							<div class="service_title">
-								<h3>Brading and Designing</h3>
+								<h3>Branding and Designing</h3>
 							</div>
 							<div class="service_text">
 								<p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam
@@ -441,6 +430,28 @@
 						</button>
 					</div>
 					<div class="modal-body modal_background">
+						<div class="row text-center">
+							<div class="col-12">
+								<h4 class="text-white">How we Work?</h4>
+							</div>
+							<div class="col-3">
+								<h6 class="text-white">Step1</h6>
+								<i class="fa fa-info text-white" aria-hidden="true"></i>
+								<p class="text-white">Submit Details</p>
+							</div>
+							&rarr;
+							<div class="col-5">
+								<h6 class="text-white">Step 2</h6>
+								<i class="fa fa-hand-pointer-o text-white" aria-hidden="true"></i>
+								<p class="text-white">Select Plan & Pay</p>
+							</div>
+							&rarr;
+							<div class="col-3">
+								<h6 class="text-white">Step3</h6>
+								<i class="fa fa-globe text-white" aria-hidden="true"></i>
+								<p class="text-white">Up & Running</p>
+							</div>
+						</div>
 						<div class="contact_container">
 							<form id="contact_form" class="contact_form">
 								<div class="row">
@@ -475,8 +486,9 @@
 					<div class="col">
 						<div
 							class="cta_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-between justify-content-center magic_fade_in">
-							<div class="cta_title">Start building your website now!</div>
-							<div class="cta_price"><span>from</span>₹599.90<span>/month</span></div>
+							<div class="cta_title text-center">Start building your website now!</div>
+							<div class="cta_price"><span>from</span><del>₹599 </del> &nbsp;&nbsp;₹499<span>/month</span>
+							</div>
 							<div class="cta_button"><a href="#pricing">Start Now</a></div>
 						</div>
 					</div>
@@ -490,6 +502,7 @@
 
 					<div class="col-lg-12 footer_col magic_fade_in">
 						<div class="footer_about">
+							<div style="padding-bottom: 50px;" class="footer_logo text-center">Contact Us</div>
 							<div class="footer_logo">Mab<span>Sites</span></div>
 							<!--
 					<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. 
@@ -540,17 +553,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="plugins/parallax-js-master/parallax.min.js"></script>
 	<script src="js/custom.js"></script>
 	<!--Start of Tawk.to Script-->
+	<!--Start of Tawk.to Script-->
 	<script type="text/javascript">
 		var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 		(function () {
 			var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
 			s1.async = true;
-			s1.src = 'https://embed.tawk.to/5dbbd9f7e4c2fa4b6bd97550/default';
+			s1.src = 'https://embed.tawk.to/5dbd4f59e4c2fa4b6bd9a3e1/default';
 			s1.charset = 'UTF-8';
 			s1.setAttribute('crossorigin', '*');
 			s0.parentNode.insertBefore(s1, s0);
 		})();
 	</script>
+	<!--End of Tawk.to Script-->
 	<!--End of Tawk.to Script-->
 	<!--Start of Tawk.to Script-->
 	<script type="text/javascript">
@@ -579,6 +594,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			$(window).on('hashchange', function (event) {
 				if (window.location.hash != "#modal") {
 					$('.modal').modal('hide');
+				}
+			});
+			firebase.auth().onAuthStateChanged(function (user) {
+				if (user) {
+					// User is signed in.
+					$(".myaccount").append('<a href="user-dashboard.html">My Account</a>');
+					// ...
+				} else {
+					// User is signed out.
+					$(".myaccount").append('<a href="sign-in.html">Login</a>');
+					// ...
 				}
 			});
 		});

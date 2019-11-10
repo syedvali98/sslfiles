@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Dashboard</title>
+    <title>MabSites</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="HostSpace template project">
@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
-                            <div class="logo"><a href="#">Mab<span>Sites</span></a></div>
+                            <div class="logo"><a href="index.html">Mab<span>Sites</span></a></div>
                         </div>
                     </div>
                 </div>
@@ -51,94 +51,37 @@
                             <div id="user_dashboard" style="display: none" class="home_content">
                                 <div id="user-name" class="home_title">Hi, </div>
                                 <div style="padding-top: 20px;" class="">
-                                    <h3 id="domain-name" class="text-white">Domain: </h3>
-                                    <h3 id="status" class="text-white">Status: </h3>
-                                    <h3 id="period" class="text-white">Subscription Period: </h3>
-                                    <h3 id="date" class="text-white">Joined On: </h3>
-                                    <h3 id="email" class="text-white">Email: </h3>
+                                    <h4 id="domain-name" class="text-white">Domain: </h4>
+                                    <h4 id="marketing-credit" class="text-white">Marketing Credit: </h4>
+                                    <h4 id="status" class="text-white">Status: </h4>
+                                    <h4 id="period" class="text-white">Subscription Period: </h4>
+                                    <h4 id="date" class="text-white">Joined On: </h4>
+                                    <h4 id="rem-days" class="text-white">Remaining time: </h4>
+                                    <h4 id="exp-date" class="text-white">Expiring On: </h4>
+                                    <h4 id="email" class="text-white">Email: </h4>
                                 </div>
-                                <div style="padding-top: 65px;" class="text-center"><h4 class="text-white text-muted">More Features Coming Soon.<eb></div>
+                                <div style="padding-top: 45px; z-index: 100;" class="text-center">
+                                    <h5 class="text-white text-muted">More Features Coming Soon.<h5>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <footer class="footer magic_fade_in">
+            <div class="home_background1">
+                <div class="row">
 
 
-
-    <!-- Footer -->
-
-    <footer class="footer magic_fade_in">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-6 footer_col magic_fade_in">
-                    <div class="footer_about">
-                        <div class="footer_logo">Mab<span>Sites</span></div>
-                        <!--
-                            <div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. 
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --
-    </div>-->
-                        <div class="footer_text">
-                            <p></p>
-                        </div>
-                        <div class="contact_container">
-                            <form id="contact_form" class="contact_form">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input id="name" type="text" class="contact_input" placeholder="Your Name"
-                                            required="required">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input id="phone" type="tel" class="contact_input"
-                                            placeholder="Your Phone Number" required="required">
-                                    </div>
-                                </div>
-                                <div>
-                                    <textarea id="message" class="contact_input contact_textarea" placeholder="Message"
-                                        required="required"></textarea>
-                                </div>
-                                <input type="submit" class="contact_button" value="Submit">
-                            </form>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="col-lg-6 footer_col">
-                    <div class="footer_links">
-                        <div class="row">
-                            <div class="col-sm-2"></div>
-                            <div class="col-sm-5 footer_list_col magic_fade_in">
-                                <div class="footer_list_container">
-                                    <div class="footer_list_title">Hosting</div>
-                                    <ul class="footer_list">
-                                        <li><a href="#">VPS Hosting</a></li>
-                                        <li><a href="#">Cloud Server</a></li>
-                                        <li><a href="#">Reseller Package</a></li>
-                                        <li><a href="#">Dedicated Hosting</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-5 footer_list_col magic_fade_in">
-                                <div class="footer_list_container">
-                                    <div class="footer_list_title">Support</div>
-                                    <ul class="footer_list">
-                                        <li><a href="#">Buy a Domain</a></li>
-                                        <li><a href="#">Premium Domain Names</a></li>
-                                        <li><a href="#">Web Hosting</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </footer>
+        </footer>
+
+
+
+
+        <!-- Footer -->
     </div>
 
 
@@ -155,6 +98,7 @@
     <script src="plugins/progressbar/progressbar.min.js"></script>
     <script src="plugins/parallax-js-master/parallax.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
 
     <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
@@ -172,12 +116,17 @@
                     $('#login_notification').hide();
                     firebase.database().ref('active-users/' + user.uid).once('value').then(function (snapshot) {
                         var data = snapshot.val() || 'Anonymous';
+                        var a = data.expiringOn;
+                        var remDays =(moment(a).fromNow(true));//to(b | String | Number | Date | Array , 'days')) // (60 * 60 * 24 * 1000);
+                        console.log(remDays);
                         $("#user-name").append(data.name);
                         $("#domain-name").append(data.domain_name);
                         $("#status").append(data.status);
                         $("#period").append(data.period);
                         $("#date").append(data.joinedOn);
                         $("#email").append(data.email);
+                        $("#exp-date").append(data.expiringOn);
+                        $("#rem-days").append(remDays);
 
                         // ...
                     });

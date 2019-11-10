@@ -158,11 +158,21 @@
                 e = $("#inputDomain").val(),
                 h = $("#inputName").val(),
                 i = $("#inputTheme").val(),
-                f = moment().format("MMM Do YY");
+                f = moment().format("L");
+                if(c == '6 Months'){
+                    var expiryDate = moment().add(6, 'M').utc();
+                }
+                else if(c=='12 Months'){
+                    var expiryDate = moment().add(12, 'M').utc();
+                }
             firebase.auth().createUserWithEmailAndPassword(a, d).then(function (success) {
                 var user = success.user;
-                var g = { name: h, email: a, phone: b, period: c, domain_name:e, theme:i, joinedOn: f, status: 'active' };
+                var expDate = expiryDate;
+                expDate = moment(expDate).format('L');
+                var g = { name: h, email: a, phone: b, period: c, domain_name:e, theme:i, joinedOn: f, expiringOn: expDate, status: 'active' };
+                console.log(expDate)
                 firebase.database().ref("active-users/" + user.uid).set(g).then(function (a) {
+                    alert('success')
                     var q = firebase.database().ref();
                     q.child("user-info").orderByChild('phone').equalTo(b).on("value", function (snapshot) {
                         snapshot.forEach(function (data) {
